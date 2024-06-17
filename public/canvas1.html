@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 3px dotted blue;
+        }
+    </style>
+<body>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+
+    <script>
+        const myCanvas=document.querySelector("#myCanvas");
+        const ctx=myCanvas.getContext("2d");
+
+        ctx.moveTo(50, 50);
+      ctx.lineTo(200, 300);
+      ctx.lineTo(400, 50);
+        // 畫筆的樣式
+        ctx.strokeStyle='tomato';
+        ctx.lineWidth=20;
+        // 呼叫stroke，套用上面樣式
+        ctx.stroke();
+    </script>
+</body>
+</html>

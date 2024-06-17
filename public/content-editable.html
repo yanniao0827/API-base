@@ -15,11 +15,15 @@
   </head>
   <body>
     <input type="text" onchange="console.log(this.value)">
-    <div id="info" contenteditable="true">111</div>
+    <div id="info" contenteditable="true">預設</div>
 
     <script>
       const info = document.querySelector("#info");
+      const v=localStorage.getItem("my-content");
 
+      if (v!==null){
+        info.innerText=v;
+      }
       // 用input的話每次值改動都會顯示出來
       info.addEventListener("input", (e) => {
         console.log(info.innerText);

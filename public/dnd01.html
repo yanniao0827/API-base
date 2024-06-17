@@ -31,5 +31,14 @@
     <div class="rect">
         <div class="ball" draggable="true">1</div>
       </div>
+      <script>
+        const b=document.querySelector(".ball");
+        const handler=(e)=>{
+            console.log(e.type)
+        };
+        b.addEventListener("dragstart",handler);
+        b.addEventListener("dragend",handler);
+        b.addEventListener("drag", handler);
+      </script>
 </body>
 </html>

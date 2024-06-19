@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={};
+        const p1={name:"Lea"};
+        const p2={name:"Chen"};
+
+        const set=new Set();
+     set.add(p1);
+     set.add(p2);
+     set.add({});
+     set.add({});
+     set.add(()=>{});
+     set.add(p2);
+     set.add(p2);
+        
+
+        console.log('set.size:',set.size);
+
+        for(let[k] of set.entries()){
+            console.log({k});
+        }
+    </script>
+</body>
+</html>

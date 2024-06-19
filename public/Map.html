@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={};
+        const p1={name:"Lea"};
+        const p2={name:"Chen"};
+
+        obj[p1]=123;
+        obj[p2]=456;
+
+        console.log(obj[p1.toString()]);
+
+        const map=new Map();
+        map.set(p1,123);
+        map.set(p2,456);
+        map.set({},2);
+        map.set({},3);
+        map.set(()=>{},4);
+
+        console.log('map.get(p1):',map.get(p1));
+        console.log('map.get(p2):',map.get(p2));
+        console.log('map.size:',map.size);
+
+        for(let[k,v] of map.entries()){
+            console.log({k,v});
+        }
+    </script>
+</body>
+</html>

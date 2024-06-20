@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" disabled /><button onclick="sendData()">SEND</button>
+    <textarea name="panel" id="panel" cols="80" rows="50" readonly></textarea>
+    <script>
+        const myInput=document.getElementById("myInput");
+        const panel=document.getElementById("panel");
+
+        const sendData=()=>{
+            socket.send(myInput.value);
+        }
+        const socket=new WebSocket("ws://192.168.36.200:3071");
+        // 有連線才能輸入訊息
+        socket.addEventListener("open",(e)=>{
+            myInput.removeAttribute("disabled");
+        });
+        socket.addEventListener("message",(e)=>{
+            panel.value+=e.data+"\n";
+        });
+        socket.addEventListener("close",(e)=>{});
+
+    </script>
+</body>
+</html>
